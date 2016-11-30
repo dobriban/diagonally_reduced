@@ -1,0 +1,3 @@
+Main scripts: 
+denoising_mse_mc_simu_red_noise.m
+denoising_mse_mc_simu_unred_noise.m

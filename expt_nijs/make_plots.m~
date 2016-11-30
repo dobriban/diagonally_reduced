@@ -1,0 +1,91 @@
+        function make_plots()
+%
+%   plot the data returned by test_limits code
+%
+        load data200.mat
+        set(groot,'defaultLineLineWidth','remove')
+        set(groot,'defaultLineLineWidth',2)
+
+
+        ndeltas
+        ngams
+
+        subplot(1,2,1)
+
+        igam = 1;
+        gam1 = gams(igam)
+%
+        evmins = 1 + (sqrt(gam1) + 1)./deltas + 5
+
+        evs_noisy = zeros(ngams,ndeltas)
+
+        for i=1:ndeltas
+%
+        for j=1:ngams
+%
+        evs_noisy(i,j) = evmins()
+    end
+
+    end
+
+        evs_noisy(1,:) = evmins(1) + [k-1:-1:0]
+%%%        ells = evs_noisy-1
+stopnow
+
+        vals1 = err_op_means(igam,:);
+        hold on; plot(deltas,vals1,'b-.','LineWidth',2)
+
+        igam = 5;
+        gam2 = gams(igam)
+%
+        vals2 = err_op_means(igam,:);
+        hold on; plot(deltas,vals2,'r--','LineWidth',2)
+
+
+
+        igam = 10;
+        gam3 = gams(igam)
+%
+        vals3 = err_op_means(igam,:);
+        hold on; plot(deltas,vals3,'g','LineWidth',2)
+
+        legend('\gamma=.1','\gamma=.45','\gamma=.9')
+
+        xlabel('\delta')
+        ylabel('difference in solutions')
+
+%
+%
+%
+
+        subplot(1,2,2)
+
+        igam = 1;
+        gam1 = gams(igam)
+%
+        vals1 = err_fr_means(igam,:);
+        hold on; plot(deltas,vals1,'b-.','LineWidth',2)
+
+
+        igam = 5;
+        gam2 = gams(igam)
+%
+        vals2 = err_fr_means(igam,:);
+        hold on; plot(deltas,vals2,'r--','LineWidth',2)
+
+
+        igam = 10;
+        gam3 = gams(igam)
+%
+        vals3 = err_fr_means(igam,:);
+        hold on; plot(deltas,vals3,'g','LineWidth',2)
+
+        legend('\gamma=.1','\gamma=.45','\gamma=.9')
+
+
+        xlabel('\delta')
+        ylabel('difference in solutions')
+
+
+        set(figure(1),'Position',[500,500,1075,400])
+        savefig(figure(1),'fig200')
