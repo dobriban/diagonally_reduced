@@ -1,5 +1,7 @@
 # PCA after Diagonal Reduction
 
+* This paper has been superseded by the follow-up work: E. Dobriban, W. Leeb, A. Singer: **Optimal prediction in the linearly transformed spiked model**. available at [arxiv](https://arxiv.org/abs/1709.03393), and to appear in The Annals of Statistics
+
 Code to reproduce the computational results from the paper:
 
 * E. Dobriban, W. Leeb, A. Singer: **PCA from noisy, linearly reduced data: the diagonal case**. available at [arxiv](https://arxiv.org/abs/1611.10333):
